@@ -1,0 +1,14 @@
+.icon {
+  &::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 52px;
+  }
+  &-mail::before {
+    background: url(../images/mail.svg) no-repeat center;
+  }
+  &-lock::before {
+    background: url(../images/lock.svg) no-repeat center;
+  }
+}
