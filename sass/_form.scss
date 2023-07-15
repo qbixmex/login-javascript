@@ -1,27 +1,8 @@
-#login {
+.login {
   width: 90%;
   background-color: none;
   grid-column: 1/2;
 
-  fieldset {
-    margin: 0;
-    border: none;
-  }
-
-  input[name="email"] {
-    position: relative;
-    &:after {
-      position: absolute;
-      content: "";
-      width: 50px;
-      height: 50px;
-      background-color: tomato;
-      z-index: 100;
-    }
-  }
-}
-
-.form {
   &-heading {
     font-family: 'Poppins', Arial, Verdana, sans-serif;
     font-weight: 600;
@@ -43,6 +24,25 @@
     }
   }
 
+  fieldset {
+    margin: 0;
+    border: none;
+  }
+
+  input[name="email"] {
+    position: relative;
+    &:after {
+      position: absolute;
+      content: "";
+      width: 50px;
+      height: 50px;
+      background-color: tomato;
+      z-index: 100;
+    }
+  }
+}
+
+.form {
   legend {
     margin-bottom: 20px;
   }
@@ -61,7 +61,7 @@
     display: block;
     width: 100%;
     border: solid 1px $white;
-    background-color: transparent;
+    background-color: none;
     padding: 15px 10px 15px 35px;
     border-radius: 5px;
     color: $text-base;
@@ -79,10 +79,17 @@
       outline: none;
       border: solid $primary-color 2px;
       &[name=email] {
-        background: transparent url(../images/mail-focus.svg) no-repeat 10px center;
+        background: none url(../images/mail-focus.svg) no-repeat 10px center;
       }
       &[name=password] {
-        background: transparent url(../images/lock-focus.svg) no-repeat 10px center;
+        background: none url(../images/lock-focus.svg) no-repeat 10px center;
+      }
+    }
+    &-error {
+      background-color: darken($error, 40%) !important;
+      border: solid darken($error, 10%) 1px;
+      &::placeholder {
+        color: $text-base;
       }
     }
   }
@@ -100,6 +107,10 @@
     background: transparent url(../images/eye.svg) no-repeat center;
     border: none;
     cursor: pointer;
+  }
+
+  &-password-eye-slash-icon {
+    background: transparent url(../images/eye-slash.svg) no-repeat center;
   }
 
   &-options {
@@ -172,6 +183,17 @@
       &:hover {
         color: darken($primary-color, 20);
       }
+    }
+  }
+
+  &-error {
+    margin: 1rem 0 0 0.5rem;
+    color: $error;
+    &:before {
+      content: "*";
+    }
+    &-hidden {
+      display: none;
     }
   }
 }

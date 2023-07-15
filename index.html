@@ -10,40 +10,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./js/main.js" defer></script>
   </head>
   <body>
     <div class="logo"><img src="./images/logo.svg" alt="Logo" /></div>
     <main id="main">
-      <div id="login">
-        <form id="form" class="form" method="POST">
-          <h1 class="form-heading">Login</h1>
+      <div id="login" class="login">
 
+        <h1 class="login-heading">Login</h1>
+        <div id="alert" class="alert alert-hidden"></div>
+
+        <form id="form" class="form" method="POST">
           <fieldset>
             <legend>Insert your information below</legend>
 
             <section class="form-group">
-              <label for="email" id="email" class="form-label">E-mail</label>
+              <label for="email" class="form-label">E-mail</label>
               <input
+                id="email"
                 type="text"
                 class="form-input"
                 name="email"
                 placeholder="Type your email"
                 autocomplete="off"
-                required
               />
+              <p id="form-error-email" class="form-error form-error-hidden"></p>
             </section>
 
             <section class="form-group">
-              <label for="password" id="password" class="form-label">Password</label>
+              <label for="password" class="form-label">Password</label>
               <div class="form-password-group">
                 <input
+                  id="password"
                   type="password"
                   class="form-input"
                   name="password"
                   placeholder="Type your password"
                   autocomplete="off"
-                  required
                 />
+                <p id="form-error-password" class="form-error form-error-hidden"></p>
                 <button
                   id="password-reveal"
                   type="button"
